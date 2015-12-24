@@ -26,17 +26,16 @@ def count_codes(majors_file):
 
     majors = sorted(majors) # sort the major codes alphabetically
 
-    count = {} # major codes will be keys, occurance of key will be value
-
+    count = 0
+    temp = majors[0]
     for major in majors:
-        if major in count: # if the key is already present in 'count'
-            count[major] += 1 # then increment the count
-        else: # else the key is not present
-            count[major] = 1 # so set the key and give it an initial value of 1
-
-    # print the major code and count
-    for major in count:
-        print(major, count[major])
+        if temp == major:
+            count += 1
+        else:
+            print(temp, count)
+            temp = major
+            count = 1
+    print(temp, count)
 
 def main( ):
     """
